@@ -10,7 +10,7 @@ public class GoldenRatio {
         int iterations = 0;
         int functionCalls = 0;
 
-        double xl = b - ψ * abs(b - a);
+        double xl = b - ψ * abs(b - a); // или a + ψ*ψ * abs(b - a)
         double xr = a + ψ * abs(b - a);
 
         double fl = f.apply(xl);
