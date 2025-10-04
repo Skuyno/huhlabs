@@ -48,7 +48,7 @@ public class Fibonaci {
         double res = (a + b) / 2.0;
         double precision = abs(b - a) / 2.0;
 
-        return new Result(res, functionCalls, precision);
+        return new Result(res, functionCalls, precision, Result.search_method_type.Fibonaci, n - 2);
     }
 
     private static int fib(int n) {

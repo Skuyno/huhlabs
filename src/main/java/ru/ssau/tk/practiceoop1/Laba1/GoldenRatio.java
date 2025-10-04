@@ -5,7 +5,7 @@ import ru.ssau.tk.practiceoop1.Laba1.Interfaces.Function1D;
 import static java.lang.Math.abs;
 
 public class GoldenRatio {
-    static double ψ = 0.618;
+    static double ψ = 0.6180339887;
     public static Result findExtremum(Function1D f, double a, double b, double eps, int maxIterations){
         int iterations = 0;
         int functionCalls = 0;
@@ -39,6 +39,6 @@ public class GoldenRatio {
         double res = (a + b) / 2;
         double precision = abs(b - a) / 2;
 
-        return new Result(res, functionCalls, precision);
+        return new Result(res, functionCalls, precision, Result.search_method_type.GoldenRation, iterations);
     }
 }

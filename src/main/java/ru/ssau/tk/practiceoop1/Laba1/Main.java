@@ -13,8 +13,12 @@ public class Main {
         double epsilon = 0.00001;
         int maxIterations = 51;
 
-        Result result = Fibonaci.findExtremum(f, a, b, epsilon, maxIterations);
+        Result result1 = Dichotomy.findExtremum(f, a, b, epsilon, maxIterations);
+        Result result2 = GoldenRatio.findExtremum(f, a, b, epsilon, maxIterations);
+        Result result3 = Fibonaci.findExtremum(f, a, b, epsilon, maxIterations);
 
-        System.out.println(result);
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
     }
 }

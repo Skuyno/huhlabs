@@ -30,6 +30,6 @@ public class Dichotomy {
         double res = (a + b) / 2;
         double precision = abs(b - a) / 2;
 
-        return new Result(res, functionCalls, precision);
+        return new Result(res, functionCalls, precision, Result.search_method_type.Dichotomy, iterations);
     }
 }
