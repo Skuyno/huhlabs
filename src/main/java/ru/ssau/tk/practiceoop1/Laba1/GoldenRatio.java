@@ -6,7 +6,7 @@ import static java.lang.Math.abs;
 
 public class GoldenRatio {
     static double ψ = 0.6180339887;
-    public static Result findExtremum(Function1D f, double a, double b, double eps, int maxIterations){
+    public static Result findExtrema(Function1D f, double a, double b, double eps, int maxIterations){
         int iterations = 0;
         int functionCalls = 0;
 

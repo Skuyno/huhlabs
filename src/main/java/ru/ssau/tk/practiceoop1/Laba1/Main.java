@@ -6,16 +6,16 @@ import ru.ssau.tk.practiceoop1.Laba1.Interfaces.Function1D;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Function1D f = x -> (x - 2) * (x - 5);
+        Function1D f = x -> (x - 2.0) * (x - 5.0);
 
-        double a = 0;
-        double b = 5;
-        double epsilon = 0.00001;
-        int maxIterations = 51;
+        double a = 0.0;
+        double b = 5.0;
+        double epsilon = 1e-6;
+        int maxIterations = 1000;
 
-        Result result1 = Dichotomy.findExtremum(f, a, b, epsilon, maxIterations);
-        Result result2 = GoldenRatio.findExtremum(f, a, b, epsilon, maxIterations);
-        Result result3 = Fibonaci.findExtremum(f, a, b, epsilon, maxIterations);
+        Result result1 = Dichotomy.findExtrema(f, a, b, epsilon, maxIterations);
+        Result result2 = GoldenRatio.findExtrema(f, a, b, epsilon*0.75, maxIterations);
+        Result result3 = Fibonacci.findExtrema(f, a, b, epsilon, maxIterations);
 
         System.out.println(result1);
         System.out.println(result2);

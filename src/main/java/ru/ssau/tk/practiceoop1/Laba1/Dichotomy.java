@@ -5,7 +5,7 @@ import ru.ssau.tk.practiceoop1.Laba1.Interfaces.Function1D;
 import static java.lang.Math.abs;
 
 public class Dichotomy {
-    public static Result findExtremum(Function1D f, double a, double b, double eps, int maxIterations){
+    public static Result findExtrema(Function1D f, double a, double b, double eps, int maxIterations){
         int iterations = 0;
         int functionCalls = 0;
 

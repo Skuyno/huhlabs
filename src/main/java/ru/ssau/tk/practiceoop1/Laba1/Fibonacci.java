@@ -5,8 +5,8 @@ import ru.ssau.tk.practiceoop1.Laba1.Interfaces.Function1D;
 import static java.lang.Math.abs;
 import static java.lang.Math.min;
 
-public class Fibonaci {
-    public static Result findExtremum(Function1D f, double a, double b, double eps, int maxIterations) {
+public class Fibonacci {
+    public static Result findExtrema(Function1D f, double a, double b, double eps, int maxIterations) {
         int functionCalls = 0;
 
         int n = 2;
@@ -48,7 +48,7 @@ public class Fibonaci {
         double res = (a + b) / 2.0;
         double precision = abs(b - a) / 2.0;
 
-        return new Result(res, functionCalls, precision, Result.search_method_type.Fibonaci, n - 2);
+        return new Result(res, functionCalls, precision, Result.search_method_type.Fibonacci, n - 2);
     }
 
     private static int fib(int n) {
