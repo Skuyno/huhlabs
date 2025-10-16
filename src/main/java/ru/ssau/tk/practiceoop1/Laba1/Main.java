@@ -14,7 +14,7 @@ public class Main {
         int maxIterations = 1000;
 
         Result result1 = Dichotomy.findExtrema(f, a, b, epsilon, maxIterations);
-        Result result2 = GoldenRatio.findExtrema(f, a, b, epsilon*0.75, maxIterations);
+        Result result2 = GoldenRatio.findExtrema(f, a, b, epsilon*(Math.sqrt(5)-1)/2, maxIterations);
         Result result3 = Fibonacci.findExtrema(f, a, b, epsilon, maxIterations);
 
         System.out.println(result1);
