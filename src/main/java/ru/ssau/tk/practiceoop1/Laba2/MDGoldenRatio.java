@@ -4,9 +4,9 @@ import org.joml.Vector2d;
 import ru.ssau.tk.practiceoop1.Laba2.Interfaces.FunctionND;
 
 public class MDGoldenRatio {
+    static final double ψ = (Math.sqrt(5)-1)/2;
 
     public static ResultND findExtrema(FunctionND f, Vector2d a, Vector2d b, double eps, int maxIterations) {
-        final double ψ = (Math.sqrt(5)-1)/2;
 
         Vector2d left = new Vector2d(a);
         Vector2d right = new Vector2d(b);
