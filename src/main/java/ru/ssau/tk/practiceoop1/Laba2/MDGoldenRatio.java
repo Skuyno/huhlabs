@@ -5,36 +5,36 @@ import ru.ssau.tk.practiceoop1.Laba2.Interfaces.FunctionND;
 
 public class MDGoldenRatio {
 
-    public static ResultND findExtrema(FunctionND f, Vector2d lhs, Vector2d rhs, double eps, int maxIterations) {
-        final double psi = (Math.sqrt(5.0) - 1.0) / 2.0; // ≈ 0.618
+    public static ResultND findExtrema(FunctionND f, Vector2d a, Vector2d b, double eps, int maxIterations) {
+        final double ψ = (Math.sqrt(5)-1)/2;
 
-        Vector2d left = new Vector2d(lhs);
-        Vector2d right = new Vector2d(rhs);
+        Vector2d left = new Vector2d(a);
+        Vector2d right = new Vector2d(b);
 
-        Vector2d x_r = new Vector2d(right).sub(left).mul(psi).add(left);
-        Vector2d x_l = new Vector2d(right).sub(left).mul(psi).negate().add(right);
+        Vector2d xr = new Vector2d(right).sub(left).mul(ψ).add(left);
+        Vector2d xl = new Vector2d(right).sub(left).mul(ψ).negate().add(right);
 
-        double f_l = f.apply(x_l);
-        double f_r = f.apply(x_r);
+        double fl = f.apply(xl);
+        double fr = f.apply(xr);
 
         int evaluations = 2;
         int iteration = 0;
 
         while (iteration < maxIterations && left.distance(right) > 2.0 * eps) {
-            if (f_l > f_r) {
-                left.set(x_l);
-                x_l.set(x_r);
-                f_l = f_r;
+            if (fl > fr) {
+                left.set(xl);
+                xl.set(xr);
+                fl = fr;
 
-                x_r = new Vector2d(right).sub(left).mul(psi).add(left);
-                f_r = f.apply(x_r);
+                xr = new Vector2d(right).sub(left).mul(ψ).add(left);
+                fr = f.apply(xr);
             } else {
-                right.set(x_r);
-                x_r.set(x_l);
-                f_r = f_l;
+                right.set(xr);
+                xr.set(xl);
+                fr = fl;
 
-                x_l = new Vector2d(right).sub(left).mul(psi).negate().add(right);
-                f_l = f.apply(x_l);
+                xl = new Vector2d(right).sub(left).mul(ψ).negate().add(right);
+                fl = f.apply(xl);
             }
 
             evaluations++;

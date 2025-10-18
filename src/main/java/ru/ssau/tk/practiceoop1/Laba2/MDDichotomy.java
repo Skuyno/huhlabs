@@ -10,7 +10,7 @@ public class MDDichotomy {
         Vector2d right = new Vector2d(b);
 
         Vector2d dir = new Vector2d(right).sub(left);
-        dir.normalize(eps);
+        dir = dir.div(right.distance(left)).mul(eps/10);
 
         int evaluations = 0;
         int iteration = 0;
@@ -19,7 +19,6 @@ public class MDDichotomy {
             // center = (left + right)/2
             Vector2d center = new Vector2d(left).add(right).mul(0.5);
 
-            // пробы: center ± dir
             Vector2d leftProbe = new Vector2d(center).sub(dir);
             Vector2d rightProbe = new Vector2d(center).add(dir);
 
