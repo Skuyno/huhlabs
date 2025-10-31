@@ -12,10 +12,14 @@ public class Main {
         double eps = 1e-6;
         int maxIter = 1000;
 
-        ResultND dichotomyResult = MDDichotomy.findExtrema(f, lhs, rhs, eps, maxIter);
-        ResultND goldenResult = MDGoldenRatio.findExtrema(f, lhs, rhs, eps, maxIter);
+        MDResult dichotomyResult = MDDichotomy.findExtrema(f, lhs, rhs, eps, maxIter);
+        MDResult goldenResult = MDGoldenRatio.findExtrema(f, lhs, rhs, eps, maxIter);
+        MDResult fibonacciResult = MDFibonacci.findExtrema(f, lhs, rhs, eps, maxIter);
+        MDResult coordinateDescentResult = MDCoordinateDescent.findExtrema(f, lhs, eps, 1.0, maxIter);
 
         System.out.println(dichotomyResult);
         System.out.println(goldenResult);
+        System.out.println(fibonacciResult);
+        System.out.println(coordinateDescentResult);
     }
 }

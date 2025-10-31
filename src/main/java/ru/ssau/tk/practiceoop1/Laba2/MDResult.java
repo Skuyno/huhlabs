@@ -3,10 +3,12 @@ package ru.ssau.tk.practiceoop1.Laba2;
 import org.joml.Vector2d;
 import java.util.Locale;
 
-public class ResultND {
+public class MDResult {
     public enum SearchMethodType {
         Dichotomy,
         GoldenRatio,
+        Fibonacci,
+        CoordinateDescent,
         none
     }
 
@@ -16,7 +18,7 @@ public class ResultND {
     public final long iterations;        // количество итераций
     public final SearchMethodType methodType;
 
-    public ResultND(Vector2d xMin, long functionCalls, double precision,
+    public MDResult(Vector2d xMin, long functionCalls, double precision,
                     SearchMethodType methodType, long iterations) {
         this.xMin = new Vector2d(xMin); // копия, чтобы не изменить извне
         this.functionCalls = functionCalls;

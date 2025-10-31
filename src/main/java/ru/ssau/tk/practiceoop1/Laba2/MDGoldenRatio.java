@@ -6,7 +6,7 @@ import ru.ssau.tk.practiceoop1.Laba2.Interfaces.FunctionND;
 public class MDGoldenRatio {
     static final double ψ = (Math.sqrt(5)-1)/2;
 
-    public static ResultND findExtrema(FunctionND f, Vector2d a, Vector2d b, double eps, int maxIterations) {
+    public static MDResult findExtrema(FunctionND f, Vector2d a, Vector2d b, double eps, int maxIterations) {
 
         Vector2d left = new Vector2d(a);
         Vector2d right = new Vector2d(b);
@@ -44,7 +44,7 @@ public class MDGoldenRatio {
         double precision = 0.5 * left.distance(right);
         Vector2d result = new Vector2d(left).add(right).mul(0.5);
 
-        return new ResultND(result, evaluations, precision,
-                ResultND.SearchMethodType.GoldenRatio, iteration);
+        return new MDResult(result, evaluations, precision,
+                MDResult.SearchMethodType.GoldenRatio, iteration);
     }
 }
