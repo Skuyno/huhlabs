@@ -5,7 +5,9 @@ import java.util.Locale;
 
 public class MDResult {
     public enum SearchMethodType {
-        GradientDescent
+        GradientDescent,
+        ConjugateGradient,
+        NewtonRaphson
     }
 
     public final Vector2d xMin;
